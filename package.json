@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "## Installation",
   "main": "index.js",
+  "scripts": {
+    "prepare": "husky"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -10,25 +13,8 @@
     "@playwright/test": "^1.41.2",
     "@types/node": "^20.11.17"
   },
-  "scripts": {
-    "test": "playwright test",
-    "test:chromium": "playwright test --retries 0 --project=chromium",
-    "test:chromium-headed": "playwright test -j 1 --retries 0 --headed --project=chromium",
-    "test:reg": "playwright test --project=chromium -g '@reg'",
-    "test:smoke": "playwright test --project=chromium -g '@smoke'",
-    "report": "playwright show-report playwright-report",
-    "ui": "playwright test --ui-port 0",
-    "trace": "playwright show-trace --port 0",
-    "allure": "allure generate ./allure-results --clean && allure open ./allure-report",
-    "lint": "eslint 'tests/**/*.ts' 'src/**/*.ts' 'playwright.config.ts'",
-    "lint:fix": "eslint 'tests/**/*.ts' 'src/**/*.ts' 'playwright.config.ts' --fix",
-    "prepare": "husky install",
-    "format": "prettier --write 'tests/**/*.ts' 'src/**/*.ts' 'playwright.config.ts' '**/*.json' '**/*.md' '!package-lock.json' '!dist/**/*' '!build/**/*'",
-    "postinstall": "playwright install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.4"
   }
 }

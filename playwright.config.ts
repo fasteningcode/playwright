@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import { WaitForLoadStateOptions } from './setup/optional.parameter.types';
+import dotenv from 'dotenv';
+import { EXPECT_TIMEOUT, TEST_TIMEOUT } from './utils/timeout.constants';
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -21,11 +24,20 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
+  // globalSetup: require.resolve('setup/global.setup.ts'),
+  // globalTeardown: require.resolve('setup/global.teardown.ts'),
+  // timeout: TEST_TIMEOUT,
+  // expect: {
+  //   timeout: EXPECT_TIMEOUT,
+  // },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
+    ignoreHTTPSErrors: true,
+    acceptDownloads: true,
+    testIdAttribute: 'qa-target',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -34,7 +46,16 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { width: 1600, height: 1000 },
+        launchOptions: {
+          args: ['--disable-web-security'],
+          /* --auto-open-devtools-for-tabs option is used to open a test with Network tab for debugging. It can help in analyzing network requests and responses.*/
+          // args: ["--disable-web-security","--auto-open-devtools-for-tabs"],
+          slowMo: 0,
+        },
+      },
     },
 
     {

@@ -1,10 +1,9 @@
-import { gotoURL, fill } from '../utils/action.utils'
-import { getLocator } from '../utils/locator.utils';
+import { gotoURL, fill } from '../package/utils/action.utils'
+import { getLocator } from '../package/utils/locator.utils';
 
 
-
-const usernameE = `#user-name`;
-const passwordE = () => getLocator('[data-test="password"]')
+const userName = `#user-name`;
+const passWord = () => getLocator(`#password`);
 
 
 export async function openPage(url) {
@@ -12,7 +11,9 @@ export async function openPage(url) {
 }
 
 export async function login(username: string, password: string) {
-    await fill(usernameE, username);
+    await fill(userName, username);
+    await fill(passWord(), password);
+
 }
 
 
