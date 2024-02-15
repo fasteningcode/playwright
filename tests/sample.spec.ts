@@ -1,6 +1,6 @@
 import { test } from "../package/setup/page.setup";
-import * as LoginPage from '../pages/login.page'
-import * as IFramePage from '../pages/iFrame.page'
+import * as LoginPage from './pages/login.page'
+import * as IFramePage from './pages/iFrame.page'
 
 
 test('Login Tests', async () => {

@@ -1,5 +1,5 @@
-import { gotoURL, fill } from '../package/utils/action.utils'
-import { getLocator } from '../package/utils/locator.utils';
+import { gotoURL, fill } from '../../package/utils/action.utils'
+import { getLocator } from '../../package/utils/locator.utils';
 
 
 const userName = `#user-name`;
