@@ -1,4 +1,4 @@
-import { test } from "../package/setup/page.setup";
+import { test } from "../framework/setup/page.setup";
 import * as LoginPage from './pages/login.page'
 import * as IFramePage from './pages/iFrame.page'
 

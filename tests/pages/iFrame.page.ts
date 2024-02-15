@@ -1,5 +1,5 @@
-import { click } from '../../package/utils/action.utils'
-import { getLocatorByLabel, getLocatorByRole } from '../../package/utils/locator.utils'
+import { click } from '../../framework/utils/action.utils'
+import { getLocatorByLabel, getLocatorByRole } from '../../framework/utils/locator.utils'
 
 const goCrossSite = () => getLocatorByRole('button', { name: 'Go cross-site (complex page)' });
 

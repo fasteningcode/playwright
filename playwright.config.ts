@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
-import { WaitForLoadStateOptions } from './package/setup/optional.parameter.types';
+import { WaitForLoadStateOptions } from './framework/setup/optional.parameter.types';
 import dotenv from 'dotenv';
-import { EXPECT_TIMEOUT, TEST_TIMEOUT } from './package/utils/timeout.constants';
+import { EXPECT_TIMEOUT, TEST_TIMEOUT } from './framework/utils/timeout.constants';
 
 /**
  * Read environment variables from file.
