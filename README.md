@@ -1,3 +1,15 @@
+# NPM Packages
+
+| Use                      | Script                                   |                               |
+| ------------------------ | ---------------------------------------- | ----------------------------- |
+| PNPM Package             | `npm i -g pnpm`                          | For efficient package manager |
+| add tsconfig             | `pnpm tsc --init`                        |                               |
+| tsup                     | `pnpm add tsup -D`                       | bundle library                |
+| noUncheckedIndexedAccess | noEmit - tru                             | change in tsconfig            |
+| package.json             | `tsup framework --format cjs, esm --dts` |                               |
+| to build                 | `pnpm run build`                         |                               |
+| Changeset                | `pnpm add -D @changesets/cli`            |                               |
+
 # Playwright Guide
 
 ## Installation

@@ -7,11 +7,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@playwright/test": "^1.41.2",
-    "@types/node": "^20.11.17"
+    "@types/node": "^20.11.17",
+    "tsup": "^8.0.2"
+  },
+  "scripts": {
+    "build": "tsup framework --format cjs, esm --dts",
+    "lint": "tsc"
   },
   "type": "module",
   "dependencies": {
-    "dotenv": "^16.4.4"
+    "dotenv": "^16.4.4",
+    "playwright": "^1.41.2",
+    "pnpm": "^8.15.2",
+    "typescript": "^5.3.3"
   }
 }

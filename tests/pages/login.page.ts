@@ -6,7 +6,7 @@ const userName = `#user-name`;
 const passWord = () => getLocator(`#password`);
 
 
-export async function openPage(url) {
+export async function openPage(url: string) {
     await gotoURL(url);
 }
 
