@@ -8,7 +8,7 @@ import { EXPECT_TIMEOUT, TEST_TIMEOUT } from './framework/utils/timeout.constant
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config();
-export const LOADSTATE: WaitForLoadStateOptions = 'domcontentloaded';
+// export const LOADSTATE: WaitForLoadStateOptions = 'domcontentloaded';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */

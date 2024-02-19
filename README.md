@@ -10,6 +10,8 @@
 | to build                 | `pnpm run build`                         |                               |
 | Changeset                | `pnpm add -D @changesets/cli`            |                               |
 
+ref: https://www.youtube.com/watch?v=eh89VE3Mk5g
+
 # Playwright Guide
 
 ## Installation
